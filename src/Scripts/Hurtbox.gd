@@ -1,6 +1,7 @@
 class_name HurtBox
 extends Area2D
 
+var _run = null
 
 func _init():
 	collision_layer = 0
@@ -14,4 +15,4 @@ func _on_area_entered(hitbox: HitBox):
 		return
 	
 	if owner.has_method("damage"):
-		owner.damage(hitbox.damage)
+		owner.damage(hitbox.damage, hitbox.owner)

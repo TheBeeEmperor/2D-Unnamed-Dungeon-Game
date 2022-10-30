@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/CharacterAssets/TestPlayer.png" type="Texture" id=2]
 [ext_resource path="res://assets/ObjectAssets/light.png" type="Texture" id=3]
 [ext_resource path="res://src/Scripts/Hurtbox.gd" type="Script" id=4]
-[ext_resource path="res://src/Objects/TestSword.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Weapons/TestSword.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9, 9 )
@@ -12,20 +12,17 @@ extents = Vector2( 9, 9 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
 rotation = -6.28319
+collision_layer = 8
+collision_mask = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.498039, 0.227451, 0.227451, 1 )
-position = Vector2( 2.99997, 3.00002 )
-scale = Vector2( 122.625, 74.0415 )
-texture = ExtResource( 2 )
-
 [node name="Player" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
 [node name="HurtBox" type="Area2D" parent="Player"]
@@ -36,10 +33,12 @@ position = Vector2( 2.35241e-06, -2.14576e-06 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 modulate = Color( 0.584314, 0.184314, 0.184314, 1 )
+current = true
 zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
 
@@ -49,5 +48,5 @@ color = Color( 0.815686, 0.556863, 0.556863, 1 )
 shadow_enabled = true
 
 [node name="TestSword" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3.99999, 3.00002 )
+position = Vector2( 4.99999, 3.00002 )
 scale = Vector2( 0.5, 0.5 )
