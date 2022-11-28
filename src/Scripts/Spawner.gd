@@ -3,7 +3,7 @@ extends Node2D
 onready var _timer = $Timer
 
 export(PackedScene) var _object
-export var _delay_range: = [1,5]
+export var _delay_range: = [1.0,5.0]
 export var _object_limit: = 20
 export var _radius:float = 500
 var _spawned_objects: = 0
@@ -20,7 +20,6 @@ func _spawn():
 		spawningObject.position = Vector2(rand_range(0,_radius),rand_range(0,_radius))
 		var cast = RayCast2D.new()
 		cast.position = spawningObject.position
-		cast.name = "RayCast"
 		cast.cast_to.x = 1
 		add_child(cast)
 		if cast.is_colliding():

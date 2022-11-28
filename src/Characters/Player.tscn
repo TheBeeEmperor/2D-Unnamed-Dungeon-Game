@@ -20,6 +20,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+_speed = 200
 
 [node name="Player" type="Sprite" parent="."]
 scale = Vector2( 0.8, 0.8 )
@@ -43,8 +44,10 @@ zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
 
 [node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -2.99999, -3.00001 )
 texture = ExtResource( 3 )
 color = Color( 0.815686, 0.556863, 0.556863, 1 )
+energy = 0.4
 shadow_enabled = true
 
 [node name="TestSword" parent="." instance=ExtResource( 5 )]

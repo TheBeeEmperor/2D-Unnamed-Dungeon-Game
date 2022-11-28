@@ -32,13 +32,18 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2d Dungeon Rogulike"
+config/name="Elementals"
 run/main_scene="res://src/Rooms/Nature/Entrance.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Player="*res://src/Characters/Player.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [global]
 

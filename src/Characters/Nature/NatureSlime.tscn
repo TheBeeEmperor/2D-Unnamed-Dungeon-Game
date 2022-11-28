@@ -21,7 +21,7 @@ radius = 284.499
 collision_layer = 4
 collision_mask = 29
 script = ExtResource( 2 )
-speed = 200
+speed = 150
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 0.439216, 0.439216, 1 )
@@ -71,4 +71,5 @@ cast_to = Vector2( 200, 0 )
 collision_mask = 9
 
 [node name="DetectionStopTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
